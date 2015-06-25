@@ -2,6 +2,7 @@ import java.util.*;    //imports scanners
 
 public class Calc {
 
+
     public static void main(String[] args) {
         boolean go = true;    //sets up loop
 
@@ -80,12 +81,12 @@ public class Calc {
             }
 	
             
-            }
+            
             scan.nextLine();
-            System.out.println("Would you like to start over? (yes,no)");           
+            System.out.println("Would you like to start over? (Y,N)");           
             String startOver = scan.nextLine();
 
-            if("no".equals(startOver))
+            if("N".equals(startOver))
             {
                 go = false;
                 System.out.println("Bye");
