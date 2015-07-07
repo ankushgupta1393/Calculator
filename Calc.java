@@ -9,7 +9,7 @@ public class Calc {
         while(go)    //creates loop to top
         {
             System.out.println("Type your choice!");
-            System.out.println("To add, type a \nTo subtract, type s \nTo multiply, type m \nTo divide, type d \nTo square root, type e \nTo find exponent, type f \nTo find absolute, type g");
+            System.out.println("To Add, type A \nTo Subtract, type B \nTo Multiply, type C \nTo Divide, type D \nTo Square root, type E \nTo find Exponent, type F \nTo find Absolute, type G \nTo round a number, type H \nTo calculate modulus, type I");
             
 
             Scanner scan = new Scanner(System.in);    //sets up scanners
@@ -17,17 +17,20 @@ public class Calc {
 
 
             String action = scan.nextLine();    //tells comp. to take user input
-
-            if("a".equals(action))    //addition
+            
+            if("A".equals(action))    //addition
             {
                 System.out.println("Enter the first number");
-                double add1 = scan.nextDouble();
+                float add1 = scan.nextFloat();
+                if(add1==0){
+                    break;
+                }
                 System.out.println("Enter the second number.");
-                double add2 = scan.nextDouble();
-                double add3 = add1 + add2;
+                float add2 = scan.nextFloat();
+                float add3 = add1 + add2;
                 System.out.println(add3);          
             }
-            if("s".equals(action))    //subtraction
+            if("B".equals(action))    //subtraction
             {
                 System.out.println("Enter the first number");
                 double sub1 = scan.nextDouble();
@@ -36,7 +39,7 @@ public class Calc {
                 double sub3 = sub1 - sub2;
                 System.out.println(sub3); 
             }
-            if("m".equals(action))    //multiplacation
+            if("C".equals(action))    //multiplacation
             {
                 System.out.println("Enter the first number");
                 double mul1 = scan.nextDouble();
@@ -45,7 +48,7 @@ public class Calc {
                 double mul3 = mul1 * mul2;
                 System.out.println(mul3); 
             }
-            if("d".equals(action))    //division
+            if("D".equals(action))    //division
             {
                 System.out.println("Enter the first number");
                 double div1 = scan.nextDouble();
@@ -55,7 +58,7 @@ public class Calc {
                 System.out.println(div3); 
             }
 
-             if("e".equals(action))    //square_root
+             if("E".equals(action))    //square_root
             {
                 System.out.println("Enter the number");
                 double sqrt = scan.nextDouble();
@@ -63,7 +66,7 @@ public class Calc {
                 System.out.println(root); 
             }
 
-             if("f".equals(action))    //exponent
+             if("F".equals(action))    //exponent
             {
                 System.out.println("Enter the number");
                 double a = scan.nextDouble();
@@ -72,13 +75,32 @@ public class Calc {
 	            double res = Math.pow(a,b);
                 System.out.println(res); 
             }
-	 if("g".equals(action))    //absolute
+	         if("G".equals(action))    //absolute
             {
                 System.out.println("Enter the number");
                 double a = scan.nextDouble();
 	            double res = Math.abs(a);
                 System.out.println(res); 
             }
+
+            if("H".equals(action))    //round
+            {
+                System.out.println("Enter the number");
+                double a = scan.nextDouble();
+                double res = Math.round(a);
+                System.out.println(res); 
+            }
+
+            if("I".equals(action))    //modulus
+            {
+                System.out.println("Enter the first number");
+                double a = scan.nextDouble();
+                System.out.println("Enter the second number");
+                double b = scan.nextDouble();
+                double res = a % b;
+                System.out.println(res); 
+            }
+    
 	
             
             
@@ -92,5 +114,6 @@ public class Calc {
                 System.out.println("Bye");
             }
         }
+        System.out.println("Bye");
     }                                  
 }
